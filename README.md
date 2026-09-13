@@ -13,7 +13,7 @@ rid of it. It is written to be read, not skimmed past.
 
 ## 1. Who we are
 
-Rora is operated by Mac Costin.
+Rora is operated by RoraFit LLC, a Pennsylvania limited liability company.
 
 Questions, requests, or complaints: **maccostin23@outlook.com**
 
