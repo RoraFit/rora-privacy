@@ -46,6 +46,9 @@ strong { font-weight: 600; color: var(--heading); }
 hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
 ul { padding-left: 1.25rem; }
 li { margin: 0.25rem 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--border); }
+th { font-weight: 600; }
 footer.site { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--caption); font-size: 0.9rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; }
 footer.site p { margin: 0; }
 /* The homepage. */
@@ -82,9 +85,9 @@ section > h2 { margin-top: 0; }
 </header>
 <main>
 <h1>Rora Privacy Policy</h1>
-<p><strong>Last updated: November 13, 2026</strong></p>
+<p><strong>Last updated: November 24, 2026</strong></p>
 <p>Rora is a personal training app. It builds you a workout plan from what you tell it about yourself, adjusts that plan as you train, and lets you talk to an AI trainer about it.</p>
-<p>This policy explains exactly what Rora collects, where it goes, and how to get rid of it. It is written to be read, not skimmed past.</p>
+<p>This policy explains exactly what Rora collects, where it goes, and how to get rid of it. It is written to be read, not skimmed past. It always lives at https://rora.fit/privacy.</p>
 <hr>
 <h2>1. Who we are</h2>
 <p>Rora is operated by RoraFit LLC, a Pennsylvania limited liability company.</p>
@@ -94,18 +97,18 @@ section > h2 { margin-top: 0; }
 <p>Rora collects what you type into it, plus the few technical records listed under &quot;Device and app records&quot; below. There is <strong>no analytics SDK, no advertising SDK, and no third-party tracking of any kind</strong> in the app. Rora does not track you across other apps or websites, and does not build an advertising profile.</p>
 <h3>Account</h3>
 <ul>
-  <li>Your email address. You sign in with a one-time code we email you, or with Sign in with Apple, in which case Apple shares your email address (or a private relay address) and, if you choose, your name. Accounts created before sign-in codes may also have a password, which is handled by our authentication provider and is never visible to us.</li>
+  <li>Your email address. You sign in with a one-time code we email you, or with Sign in with Apple, in which case Apple shares your email address (or a private relay address) and, if you choose, your name. We keep only your first name from it. Accounts created before sign-in codes may also have a password, which is handled by our authentication provider and is never visible to us.</li>
 </ul>
 <h3>Your fitness profile</h3>
-<p>You provide this during onboarding and can change it any time under Profile → Edit My Info:</p>
+<p>You provide this during onboarding and can change it any time under Profile → Edit My Fitness Info:</p>
 <ul>
   <li>First name, age, gender</li>
   <li>Height, weight, current and goal body-fat percentage</li>
   <li>Occupation, average sleep, self-reported stress level</li>
   <li>Training experience, years training, past or current sport and level</li>
-  <li>Goals, target timelines, any event you are training for</li>
+  <li>Goals, target timelines, any event you are training for, and any notes you add about your goals</li>
   <li>Diet notes</li>
-  <li>Equipment access and where you train</li>
+  <li>Equipment access and where you train, and any notes you add about your equipment</li>
   <li>Preferred training days, times, session length, and workout styles</li>
   <li>Hobbies and other sports</li>
 </ul>
@@ -113,15 +116,18 @@ section > h2 { margin-top: 0; }
 <p>Two fields specifically ask about your health, and you can leave both blank:</p>
 <ul>
   <li><strong>Injuries or physical limitations</strong> (free text)</li>
-  <li><strong>Medical conditions or clearance concerns</strong> (a yes/no flag and free text)</li>
+  <li><strong>Medical conditions or clearance concerns</strong> (a yes/no answer, or &quot;Prefer not to say&quot;, and free text)</li>
 </ul>
-<p>We treat these as sensitive. They exist so the plan can work around them. See section 3 — they are sent to our AI provider along with the rest of your profile, because a plan that ignores your injuries is worse than no plan.</p>
+<p>We treat these as sensitive. They exist so the plan can work around them. See section 3 — they are sent to our AI provider along with the rest of your profile, only after you agree on the AI permission screen, because a plan that ignores your injuries is worse than no plan.</p>
+<p>Anything you write in chat, in a check-in, or in free-text notes may also include health information if you choose to share it.</p>
 <h3>Training activity</h3>
 <ul>
   <li>Which exercises you marked complete, and when</li>
   <li>Weights you entered</li>
-  <li>How a workout felt (&quot;too easy&quot; / &quot;just right&quot; / &quot;too hard&quot;)</li>
+  <li>How a workout felt (&quot;too easy&quot; / &quot;just right&quot; / &quot;too hard&quot;), and any note you add about why</li>
   <li>Activities you logged outside the plan, in your own words</li>
+  <li>How you're feeling when you check in on the Home screen (great, good, tired or sore)</li>
+  <li>Your 3-week check-in: strength estimates calculated from the sets you logged, a short AI-written summary of your progress, how you say you feel about your progress, and when you opened it</li>
 </ul>
 <h3>Conversations</h3>
 <ul>
@@ -132,9 +138,12 @@ section > h2 { margin-top: 0; }
 <ul>
   <li>A push notification token, if you allow notifications</li>
   <li>Your timezone, so reminders arrive at a sensible local hour</li>
-  <li>For each installation: a random installation ID, the platform, the app version and update it runs, and when it was first and last opened</li>
-  <li>Records of AI feature use (when, which feature, and token counts, with no message content), used to run the app and its fair-use limits</li>
+  <li>For each installation: a random installation ID, the platform, the app version and update it runs, and when it was first and last opened. It contains nothing you typed. We use it to check that updates reach devices and to pause automatic plan updates for accounts nobody has opened in a while.</li>
+  <li>Records of AI feature use (when, which feature, which model, how many tokens it used and what it cost, with no message content), used to run the app and its fair-use limits</li>
+  <li>Records of plan rebuilds and of times you reached a usage limit (IDs and times only).</li>
+  <li>Your AI permission choices (agreed or withdrawn, when, and which version of the notice you saw), and which version of the Terms of Use you accepted and when.</li>
 </ul>
+<p>We also use these records to understand how Rora is used and to improve it: for example, what the AI costs per user, which features are used, how plans progress and how the app performs. These reports are not shared for advertising or combined with data from other companies.</p>
 <h3>Voice input</h3>
 <p>If you use the microphone button, your speech is converted to text by <strong>your device's own operating system</strong> (Apple's or Google's speech recognition). Rora receives only the resulting text. Depending on your device settings, your operating system may process that audio on-device or on its own servers, under its own privacy policy — not ours. Rora never stores audio.</p>
 <hr>
@@ -143,49 +152,69 @@ section > h2 { margin-top: 0; }
 <h3>Supabase — storage and accounts</h3>
 <p>Hosts the database and handles sign-in. Everything in section 2 is stored there. <strong>Data is stored in the United States (Oregon).</strong> If you are outside the US, this means your data is transferred to and held in the US.</p>
 <h3>Anthropic — the AI trainer</h3>
-<p><strong>This is the sharing most worth understanding.</strong> To write and adjust your plan, and to answer you in chat, Rora sends Anthropic:</p>
+<p><strong>This is the sharing most worth understanding.</strong> Rora's plans, plan changes and chat replies are generated by AI models made by Anthropic, PBC. <strong>Only after you agree on the AI permission screen</strong>, Rora's servers (never your device) send Anthropic:</p>
 <ul>
-  <li>your fitness profile, <strong>including your injury and medical notes</strong></li>
-  <li>your recent training history and how workouts felt</li>
-  <li>your chat messages</li>
+  <li>your fitness profile: age, gender, height, weight, body-fat figures, goals, timelines and your notes about them, experience, sport, occupation, diet notes, sleep, stress, equipment and your notes about it, schedule, and hobbies;</li>
+  <li><strong>your injury and medical notes, if you entered any</strong>;</li>
+  <li>your workout history, logged weights, how sessions felt and any note you added about why, activities you logged outside the plan, and the strength estimates in your 3-week check-in (not how you say you feel);</li>
+  <li>your chat messages, including Home screen check-ins, and the plan they are about.</li>
 </ul>
-<p>This happens on our servers, not from your device. It is required for the app's core function: the plan is written by that model, from that information.</p>
-<p>Anthropic processes this to generate the response and, under its commercial terms, does not use it to train its models.</p>
+<p>Your name and email address are not sent.</p>
+<p>Anthropic acts as Rora's data processor under its Data Processing Addendum. Its commercial terms state that it may not train models on this data. Anthropic processes it to provide and maintain its service, including keeping it secure. Anthropic deletes it within 30 days of receipt. If Anthropic's automated trust and safety systems flag a request as a possible violation of its Usage Policy, Anthropic may keep the inputs and outputs for up to 2 years and its classification scores for up to 7 years. Anthropic may also keep data where the law requires.</p>
 <h3>Expo — notifications and updates</h3>
-<p>Delivers push notifications (which means it handles your device token and the notification text) and delivers app updates. Notifications reach your device through Apple's or Google's push service.</p>
+<p>Delivers push notifications (which means it handles your device token and the notification text) and delivers app updates. Notifications reach your device through Apple's or Google's push service. Chat and plan notifications carry fixed text (&quot;Rora replied to your message&quot;, &quot;Open Rora to take a look.&quot;, &quot;Open Rora to see what changed.&quot;); the details stay in the app. A workout reminder says only how many exercises are planned (&quot;Today's workout: 6 exercises&quot;), and a rest-day reminder carries fixed text (&quot;Recovery's part of the plan too. A short stretch or walk still counts — log it in Chat if you did something.&quot;). Notification text passes through Expo and Apple or Google and may appear on your lock screen. You can turn notifications off in Profile.</p>
 <h3>Resend — sign-in emails</h3>
-<p>Sends the one-time sign-in codes and account emails, which means it handles your email address.</p>
+<p>Sends the one-time sign-in codes and account emails, which means it handles your email address and the email itself.</p>
 <h3>Apple — Sign in with Apple</h3>
 <p>If you choose Sign in with Apple, Apple confirms your identity to us. When you delete your account, Rora asks Apple to revoke Rora's access.</p>
+<h3>Google — our email</h3>
+<p>Our support and sending mailboxes on rora.fit (including support@rora.fit) are hosted by Google Workspace, so emails you send us, and our replies, are held there.</p>
 <h3>Legal</h3>
 <p>We will disclose data if we are legally required to.</p>
 <hr>
-<h2>4. Why Rora is allowed to hold this</h2>
-<p>We process your data because you asked us to provide the service, and you agreed to the Terms of Use when you signed up. For the health information in section 2, we rely on <strong>your explicit consent</strong>, which you give by choosing to type it in. You can withdraw that consent by clearing those fields.</p>
+<h2>4. Your permission to use AI</h2>
+<p>Before Rora sends anything to Anthropic, the app asks your permission on a screen that names Anthropic and lists what is sent. If you don't agree, nothing is sent, but Rora can't build a plan, because the plan is written by Anthropic's model. Rora records when you agreed and which version of that notice you saw. If what we send, or who we send it to, changes, we will ask you again.</p>
+<h2>5. How to withdraw</h2>
+<p>You can withdraw your AI permission at any time in <strong>Profile → AI &amp; Data</strong>. After you withdraw, Rora sends nothing more to Anthropic. Chat, plan rebuilds and automatic plan updates stop. Your plan, history and workout logging keep working. What was already sent stays with Anthropic only for the retention periods in section 3. You can turn it back on in the same place.</p>
+<p>You can also withdraw consent for your health information specifically by clearing the injury and medical fields in Profile → Edit My Fitness Info. Rora stops using them in new requests from then on.</p>
+<h2>6. Why Rora is allowed to hold this</h2>
+<p>We process your data because you asked us to provide the service, and you agreed to the Terms of Use when you signed up. For the health information in section 2, we rely on <strong>your explicit consent</strong>, which you give on the AI permission screen and by choosing to enter it. You can withdraw it as described in section 5.</p>
 <hr>
-<h2>5. How long it is kept</h2>
+<h2>7. How long it is kept</h2>
 <p>Your data stays until you delete your account. Chat history, plans, and completion logs are kept for as long as the account exists, because the app uses your history to write your next block of training.</p>
+<table>
+  <thead><tr><th>Data</th><th>How long</th></tr></thead>
+  <tbody>
+    <tr><td>Your account, profile, plans, workouts and chats</td><td>Until you delete your account</td></tr>
+    <tr><td>AI usage cost records (no content)</td><td>Kept after deletion with any link to you removed</td></tr>
+    <tr><td>Data sent to Anthropic</td><td>Deleted by Anthropic within 30 days; up to 2 years if flagged by its safety systems (classification scores up to 7 years); longer if the law requires</td></tr>
+    <tr><td>Server logs</td><td>7 days</td></tr>
+    <tr><td>Backups</td><td>Up to 7 days after deletion</td></tr>
+    <tr><td>Notifications and emails</td><td>Held by Expo, Apple or Google, Resend and Google Workspace under their own policies</td></tr>
+  </tbody>
+</table>
 <hr>
-<h2>6. Deleting your account</h2>
-<p>You can delete your account yourself in the app: <strong>Profile → Delete Account</strong>. Deletion is immediate and permanent. It removes your profile, plans, workout history, and chat history. If you signed in with Apple, Rora also asks Apple to revoke Rora's access.</p>
+<h2>8. Deleting your account</h2>
+<p>You can delete your account yourself in the app: <strong>Profile → Delete Account</strong>. Deletion is immediate and permanent. It removes your account, profile, plans, workout history, check-ins, chat history, feedback, installation records, usage-limit records and AI permission records. If you signed in with Apple, Rora first asks Apple to revoke Rora's access; if Apple doesn't confirm it, your account is not deleted and you can try again. Records of AI usage costs (which contain no content) are kept without any link to you.</p>
 <p>If you can't use the app, email <strong>support@rora.fit</strong> from the address you signed up with, and we will delete your account within 30 days.</p>
-<p>Some records may persist briefly in encrypted backups before being overwritten on our providers' normal cycles.</p>
+<p>Deleted data may remain in backups until they expire (section 7).</p>
 <hr>
-<h2>7. Your rights</h2>
+<h2>9. Your rights</h2>
 <p>Depending on where you live, you can ask us to give you a copy of your data, correct it, delete it, or restrict what we do with it. Most of this you can do yourself in the app; for anything else, email the address in section 1.</p>
 <p>If you are in the UK or EU and think we have handled your data badly, you can complain to your national data protection authority.</p>
 <hr>
-<h2>8. Children</h2>
-<p>Rora is not intended for children. <strong>Do not create an account if you are under 18.</strong> We apply the same age floor everywhere rather than varying it by country.</p>
+<h2>10. Children</h2>
+<p>Rora is not intended for children. <strong>Do not create an account if you are under 18.</strong> We apply the same age floor everywhere rather than varying it by country. The app asks your age and won't continue below 18.</p>
 <hr>
-<h2>9. Security</h2>
+<h2>11. Security</h2>
 <p>Data is encrypted in transit. Access to the production database is restricted, and per-user access rules mean one account cannot read another's data.</p>
 <p>No system is perfectly secure, and we will not pretend otherwise.</p>
 <hr>
-<h2>10. Rora is not medical advice</h2>
-<p>Rora generates training plans using AI. It is not a doctor, a physiotherapist, or a substitute for either. It can be wrong. Talk to a qualified professional before starting a new training programme, especially if you flagged a medical condition. This mirrors the Acknowledgment of Risk you accepted in the app.</p>
+<h2>12. Rora is not medical advice</h2>
+<p>Rora generates training plans using AI. It is not a doctor, a physiotherapist, or a substitute for either. It is not a medical device and doesn't diagnose, treat or prevent any condition. It can be wrong. Talk to a qualified professional before starting a new training program, especially if you flagged a medical condition. This mirrors the Acknowledgment of Risk you accepted in the app.</p>
+<p>Rora is not an emergency or crisis service. In an emergency, call 911. If you're struggling, call or text 988.</p>
 <hr>
-<h2>11. Changes</h2>
+<h2>13. Changes</h2>
 <p>If this policy changes materially, we will update the date at the top and notify you in the app before the change takes effect.</p>
 </main>
 <footer class="site">
